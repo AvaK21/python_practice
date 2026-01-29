@@ -1,0 +1,16 @@
+Commands to import and verify package
+bash>> cd package_practice
+
+bash>>python3     
+<--! the line above tells the IDE what interpreter to use, 
+below was the terminal output-->
+
+Python 3.13.9 (tags/v3.13.9:8183fa5, Oct 14 2025, 14:09:13) [MSC v.1944 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+Ctrl click to launch VS Code Native REPL
+
+>>> import mymath
+>>> mymath.basic.add(3,4)
+7
+>>> mymath.stats.median([3,4,5,6,7,8,9,10])
+6.5

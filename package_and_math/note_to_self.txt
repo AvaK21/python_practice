@@ -1,0 +1,16 @@
+.venv\Scripts\Activate.ps1
+cd package_and_math
+    (.venv)C:\Users\ava\VS code codes\python_practice\package_and_math>
+python3 server.py
+     * Running on all addresses (0.0.0.0)
+    * Running on http://127.0.0.1:8080
+    * Running on http://10.35.102.116:8080
+    Press CTRL+C to quit
+
+
+
+127.0.0.1 - - [28/Jan/2026 22:38:54] "GET /sub?num1=&num2= HTTP/1.1" 500 -
+127.0.0.1 - - [28/Jan/2026 22:38:59] "GET /sub?num1=4&num2=5 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Jan/2026 22:39:00] "GET /mul?num1=4&num2=5 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Jan/2026 22:39:00] "GET /sum?num1=4&num2=5 HTTP/1.1" 200 -
+

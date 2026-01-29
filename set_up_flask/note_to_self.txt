@@ -1,0 +1,28 @@
+To set up the virtual environment so the application has isolated system and own set of dependencies
+Go to:https://code.visualstudio.com/docs/python/tutorial-flask
+
+Troubleshoot: The virtual environment doesn't acticate with powershell terminal, so change to bash
+
+After changing to bash this is the terminal output -->
+ava@SurfaceJK CLANGARM64 ~/VS code codes/python_practice
+$ source "C:/Users/ava/VS code codes/python_practice/.venv/Scripts/activate"
+(.venv) 
+
+Commands
+python -m pip install flask
+cd set_up_flask
+ls  
+    ---> server.py   &    (.venv)
+flask --app server --debug run
+     * Serving Flask app 'server'
+    * Debug mode: on
+    WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+    * Running on http://127.0.0.1:5000
+    Press CTRL+C to quit
+    * Restarting with stat
+    * Debugger is active!
+    * Debugger PIN: 123-850-692
+    127.0.0.1 - - [09/Jan/2026 22:59:56] "GET / HTTP/1.1" 200 -
+    127.0.0.1 - - [09/Jan/2026 22:59:56] "GET /favicon.ico HTTP/1.1" 404 -
+
+(If click on the link given in previous output will have a "web page" display the web app)

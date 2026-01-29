@@ -1,0 +1,94 @@
+Have a venv - virtual environment
+Switch to bash terminal to activate the .venv
+go to folder with file want to run
+run: flask --app server --debug run
+Go to the link it gives you in terminal output ex:  Running on http://127.0.0.1:5000
+The output show be ...
+-------------------------
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 825-824-331
+127.0.0.1 - - [14/Jan/2026 07:52:49] "GET / HTTP/1.1" 200 -
+
+When go to the URL universal resourse locator?  alter the link 
+Before: http://127.0.0.1:5000
+After: http://127.0.0.1:5000/data
+    Web output: {
+      "message": "Data of length 5 found"
+    }
+    Terminal output: 127.0.0.1 - - [14/Jan/2026 07:52:54] "GET /data HTTP/1.1" 200 -
+
+After: http://127.0.0.1:5000/exp
+    Web output: {
+    "message": "This is a specific message it is important that you remember what you got for birthday last year!!"
+    }
+    Terminal: 127.0.0.1 - - [14/Jan/2026 08:00:12] "GET /exp HTTP/1.1" 200 -
+
+After: http://127.0.0.1:5000/name_search?q=Corby
+        Web output: {
+    "address": "90329 Amoth Drive",
+    "avatar": "http://dummyimage.com/198x100.png/cc0000/ffffff",
+    "city": "Boulder",
+    "country": "United States",
+    "first_name": "Corby",
+    "graduation_year": 1984,
+    "id": "a3d8adba-4c20-495f-b4c4-f7de8b9cfb15",
+    "last_name": "Tettley",
+    "zip": "80305"
+    }
+    terminal output: 127.0.0.1 - - [14/Jan/2026 08:15:16] "GET /name_search?q=Corby HTTP/1.1" 200 -
+
+After: http://127.0.0.1:5000/person/a3d8adba-4c20-495f-b4c4-f7de8b9cfb15
+    Web output: {
+    "address": "90329 Amoth Drive",
+    "avatar": "http://dummyimage.com/198x100.png/cc0000/ffffff",
+    "city": "Boulder",
+    "country": "United States",
+    "first_name": "Corby",
+    "graduation_year": 1984,
+    "id": "a3d8adba-4c20-495f-b4c4-f7de8b9cfb15",
+    "last_name": "Tettley",
+    "zip": "80305"
+    }
+    Terminal output: 127.0.0.1 - - [14/Jan/2026 08:17:37] "GET /person/a3d8adba-4c20-495f-b4c4-f7de8b9cfb15 HTTP/1.1" 200 -
+
+
+At this point and time I am unsure how to do the commands to interact with virtual environment 
+while it is running so for ex:
+ curl -X GET -i -w '\n' localhost:5000
+ curl -X GET -i -w '\n' localhost:5000/no_content
+ curl -X GET -i -w '\n' localhost:5000/exp
+ curl -X GET -i -w '\n' localhost:5000/data
+ curl -X GET -i -w '\n' "localhost:5000/name_search?q=Abdel"
+ curl -X GET -i -w '\n' "localhost:5000/name_search?q=123"
+ curl -X GET -i -w '\n' "localhost:5000/name_search?q="
+ curl -X GET -i -w '\n' "localhost:5000/name_search?q=qwerty"
+ curl -X GET -i -w '\n' "localhost:5000/count"
+ curl -X GET -i localhost:5000/person/66c09925-589a-43b6-9a5d-d1601cf53287
+ curl -X GET -i localhost:5000/person/not-a-valid-uuid
+ curl -X GET -i localhost:5000/person/11111111-589a-43b6-9a5d-d1601cf51111
+ curl -X DELETE -i localhost:5000/person/66c09925-589a-43b6-9a5d-d1601cf53287
+ curl -X GET -i localhost:5000/count
+ curl -X DELETE -i localhost:5000/person/not-a-valid-uuid
+ curl -X DELETE -i localhost:5000/person/11111111-589a-43b6-9a5d-d1601cf51111
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
