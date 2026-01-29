@@ -6,11 +6,13 @@ python3 server.py
     * Running on http://127.0.0.1:8080
     * Running on http://10.35.102.116:8080
     Press CTRL+C to quit
+It said it had internal server errors - fix get the template and static folder and files in them
+template and static folder was provided by the lab assignment
 
-
-
+HTTP ex of interacting with the interface of the webpage
 127.0.0.1 - - [28/Jan/2026 22:38:54] "GET /sub?num1=&num2= HTTP/1.1" 500 -
 127.0.0.1 - - [28/Jan/2026 22:38:59] "GET /sub?num1=4&num2=5 HTTP/1.1" 200 -
 127.0.0.1 - - [28/Jan/2026 22:39:00] "GET /mul?num1=4&num2=5 HTTP/1.1" 200 -
 127.0.0.1 - - [28/Jan/2026 22:39:00] "GET /sum?num1=4&num2=5 HTTP/1.1" 200 -
 
+Learned: Check if the project has any files that it depends on to operate
