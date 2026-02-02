@@ -70,14 +70,14 @@ def delete_transaction(transaction_id):
 @app.route('/search', methods = ['GET', 'POST'])
 def search_transactions():
     if request.method == 'POST':
-        max = float(request.form['max_amount'])
-        min = float(request.form['min_amount'])
+        v_max = float(request.form['max_amount'])
+        v_min = float(request.form['min_amount'])
         # list comprehension - [new_item for item in iterable if condition]
-        filtered = [t for t in transactions if (t['amount'] >= min and t['amount'] <= max)]
-        return render_template('transactions.html', transaction = filtered)
+        filtered = [t for t in transactions if (v_min <= t['amount'] <= v_max)]
+        return render_template('transactions.html', transactions = filtered)
     #line below has be added but not tested 
     return render_template('search.html')
-    # Add get functionality
+
 
 
 # Run the Flask app - make sure it is the main script calling it, and not had been imported
