@@ -1,0 +1,11 @@
+ .venev\Scripts\Activate.ps1
+go to the right folder
+git clone https://github.com/ibm-developer-skills-network/obmnl-flask_assignment.git
+
+python3 app.py
+
+
+in the url change to: http://127.0.0.1:5000/search
+To do GET searh.html, to fill form and when submit it POST from sumbit.html it renders filtered transaction.html of the list
+
+learned: how to do crud functions on list of dictionaries with different url dicorators

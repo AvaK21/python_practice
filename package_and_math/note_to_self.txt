@@ -1,4 +1,4 @@
-.venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
 cd package_and_math
     (.venv)C:\Users\ava\VS code codes\python_practice\package_and_math>
 python3 server.py
@@ -16,3 +16,5 @@ HTTP ex of interacting with the interface of the webpage
 127.0.0.1 - - [28/Jan/2026 22:39:00] "GET /sum?num1=4&num2=5 HTTP/1.1" 200 -
 
 Learned: Check if the project has any files that it depends on to operate
+Also on my machine I have now allowed virtual enviroments with powershell so to activate the venv
+.\.venv\Scripts\Activate.ps1
