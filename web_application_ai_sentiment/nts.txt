@@ -1,0 +1,122 @@
+#Project on  2/3/26
+
+THIS PROJECT DOESN'T WORK ON VS CODE - GET A TIMEOUT ERROR
+
+Step 1: git clone https://github.com/ibm-developer-skills-network/zzrjt-practice-project-emb-ai.git
+
+Info
+#use of the Watson Embedded AI Libraries.  - i Coursera IDE automatically
+#use BERT based sentiment ana,ysis function of Watson NLP
+
+
+
+#test sentiment function   --> from file_name import function_name
+# run in python not bash bash doesn't understand the command from
+#python3.11 - in VS code will be python3
+
+#>>> from sentiment_analysis import sentiment_analyzer
+# >>> sentiment_analyzer("I love this new technology")
+# '{"documentSentiment":{"score":0.996954, "label":"SENT_POSITIVE", "mixed":false, "sentimentMentions":[{"span":{"begin":0, "end":26, "text":"I love this new technology"}, "sentimentprob":{"positive":0.9941229, "neutral":0.0028645627, "negative":0.0030124863}}]}, "targetedSentiments":{"targetedSentiments":{}, "producerId":{"name":"Aggregated Sentiment Workflow", "version":"0.0.1"}}, "producerId":{"name":"Aggregated Sentiment Workflow", "version":"0.0.1"}}'
+#exit() or Ctrl+Z for exit the python shell
+
+#---
+#>>> sentiment_analyzer("Today is not the best day.")
+# '{"documentSentiment":{"score":-0.901571, "label":"SENT_NEGATIVE", "mixed":false, "sentimentMentions":[{"span":{"begin":0, "end":26, "text":"Today is not the best day."}, "sentimentprob":{"positive":0.09696443, "neutral":0.051513862, "negative":0.85152173}}]}, "targetedSentiments":{"targetedSentiments":{}, "producerId":{"name":"Aggregated Sentiment Workflow", "version":"0.0.1"}}, "producerId":{"name":"Aggregated Sentiment Workflow", "version":"0.0.1"}}'
+#>>> sentiment_analyzer("I can't wait to go to the park!")
+# '{"documentSentiment":{"score":0.823226, "label":"SENT_POSITIVE", "mixed":false, "sentimentMentions":[{"span":{"begin":0, "end":31, "text":"I can\'t wait to go to the park!"}, "sentimentprob":{"positive":0.76045597, "neutral":0.114504814, "negative":0.12503922}}]}, "targetedSentiments":{"targetedSentiments":{}, "producerId":{"name":"Aggregated Sentiment Workflow", "version":"0.0.1"}}, "producerId":{"name":"Aggregated Sentiment Workflow", "version":"0.0.1"}}'
+#>>> sentiment_analyzer("I can't wait to go to the park! But not so excited to be going to the doctor's.")
+#'{"documentSentiment":{"score":0.707219, "label":"SENT_POSITIVE", "mixed":false, "sentimentMentions":[{"span":{"begin":0, "end":31, "text":"I can\'t wait to go to the park!"}, "sentimentprob":{"positive":0.7604558, "neutral":0.1145049, "negative":0.12503935}}, {"span":{"begin":32, "end":79, "text":"But not so excited to be going to the doctor\'s."}, "sentimentprob":{"positive":0.59277976, "neutral":0.046741012, "negative":0.3604793}}]}, "targetedSentiments":{"targetedSentiments":{}, "producerId":{"name":"Aggregated Sentiment Workflow", "version":"0.0.1"}}, "producerId":{"name":"Aggregated Sentiment Workflow", "version":"0.0.1"}}'
+
+# --- in python shell 
+#>>> import json
+# >>> from sentiment_analysis import sentiment_analyzer
+# >>> response = sentiment_analyzer("I love this new technology")
+# >>> formatted_response = json.loads(response)
+# >>> print(formatted_response)
+# {'documentSentiment': {'score': 0.996954, 'label': 'SENT_POSITIVE', 'mixed': False, 'sentimentMentions': [{'span': {'begin': 0, 'end': 26, 'text': 'I love this new technology'}, 'sentimentprob': {'positive': 0.9941229, 'neutral': 0.0028645627, 'negative': 0.0030124863}}]}, 'targetedSentiments': {'targetedSentiments': {}, 'producerId': {'name': 'Aggregated Sentiment Workflow', 'version': '0.0.1'}}, 'producerId': {'name': 'Aggregated Sentiment Workflow', 'version': '0.0.1'}}
+# --- the response doesn't have '' around it now is seen as a dictionary now
+#>>> label = formatted_response['documentSentiment']['label']
+# >>> score = formatted_response['documentSentiment']['score']
+# >>> label
+# 'SENT_POSITIVE'
+# >>> score
+# 0.996954
+
+
+
+#After Doing task 3 have sentimental_analyzer return a dictionary of label and score - in terminal
+#python3.11
+# Python 3.11.14 (main, Oct 10 2025, 08:54:03) [GCC 11.4.0] on linux
+# Type "help", "copyright", "credits" or "license" for more information.
+# >>> from sentiment_analysis import sentiment_analyzer
+# >>> sentiment_analyzer("Wow! This is great! Thank you!")
+# {'label': 'SENT_POSITIVE', 'score': 0.986882}
+
+Task 4 - making a package
+a package needs to have a __init__.py that references the file with functions
+     from . import file_name
+remember: 
+    python shell --> python3 or python3.11
+    from package_name.module_name import function_name --> from SentimentAnalysis.sentiment_analysis import sentiment_analyzer
+    >>> sentiment_analyzer("Lala emotions are interesting!")
+    {'label': 'SENT_POSITIVE', 'score': 0.988422}
+
+
+
+#Experimented: Pushing to GitHub from the course's IDE... (used Copilot for help)
+have a repo of project name in Github
+$git push 
+ username - github username
+ password:ssh key made on Github --> settings, developer settings, Personal access tokens, allow repo checkboxes, generate
+
+$git status --> to see what needs to be committed
+$git add . 
+$git commit -m "Testing commiting via the terminal"
+$git remote -v --> check that the origin is right repo
+$git push -u origin main --> push the commits from main (local) to origin (remote)
+
+Experiment 2: Session ended and need to get the project back
+git clone https://github.com/ibm-developer-skills-network/zzrjt-practice-project-emb-ai.git
+    go to project folder
+git remote -v
+    shows what is the remote origin
+git remote mote set-url origin https://github.com/AvaK21/practice-project-emb-ai
+    replaces the remote origin to the url you write
+git remote -v
+    display new remote
+git pull origin main --allow-unrelated-histories 
+    pull remote version to your local version
+
+    Now there have been changes
+git add .
+git commit -m "Message"
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+git commit -m "Message"
+    had to redo commit above bc user info had to be entered
+git push
+
+
+
+Task 5 
+python3.11 test_sentiment_analysis.py 
+--> .
+----------------------------------------------------------------------
+Ran 1 test in 0.720s
+
+OK
+
+Task 6
+
+
+ * Serving Flask app 'Sentiment Analyzer'
+ * Debug mode: off
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+--> change:     app.run(host='0.0.0.0', port=5000)  change port to 5001
+
+
+THIS Project doesn't work on VS code. GETS A TIMEOUT ERRORa
+python server.py
+
+Dealt with error handling
