@@ -1,0 +1,7 @@
+python3 -m pip install requests
+installs the package to be the compatible with te installed version of python3 in the environment
+
+Used nts.txt in tne web_application_ai_sentiment folder as helpful tips because the structure of the project is similar.
+
+
+I didn't test on VS code because I am unaware of what are the Watson NLP libraries  that are needed, that was on the Coursera IDE
